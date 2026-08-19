@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { GraduationCap, Users, ClipboardList, Trophy } from 'lucide-react'
 import { schoolInfo } from '@/lib/data'
+import HexBadge from '@/components/HexBadge'
 
 function Counter({ target, suffix = '' }: { target: number; suffix?: string }) {
   const [count, setCount] = useState(0)
@@ -30,36 +30,45 @@ function Counter({ target, suffix = '' }: { target: number; suffix?: string }) {
   return <div ref={ref}>{count.toLocaleString('id-ID')}{suffix}</div>
 }
 
-export default function StatsSection() {
-  const stats = [
-    { label: 'Alumni', value: schoolInfo.stats.alumni, suffix: '+', icon: GraduationCap, bg: 'bg-blue-500' },
-    { label: 'Guru & Tendik', value: schoolInfo.stats.guru, suffix: '', icon: Users, bg: 'bg-emerald-500' },
-    { label: 'Murid Aktif', value: schoolInfo.stats.murid, suffix: '+', icon: ClipboardList, bg: 'bg-violet-500' },
-    { label: 'Ekstrakurikuler', value: schoolInfo.stats.ekskul, suffix: '', icon: Trophy, bg: 'bg-amber-500' },
-  ]
+const stats = [
+  {
+    label: 'Alumni', value: schoolInfo.stats.alumni, suffix: '+',
+    icon: <><path d="M12 3 2 8l10 5 8-4.2V16M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/></>,
+  },
+  {
+    label: 'Guru & Tendik', value: schoolInfo.stats.guru, suffix: '',
+    icon: <><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3-6 7-6s7 2.7 7 6"/><circle cx="18" cy="9" r="2.4"/><path d="M16 20c.2-2.6 2.2-4.6 4.8-4.9"/></>,
+  },
+  {
+    label: 'Murid Aktif', value: schoolInfo.stats.murid, suffix: '+',
+    icon: <><rect x="5" y="4" width="14" height="17" rx="1.5"/><path d="M9 2.5h6v3H9zM8.5 10h7M8.5 14h7M8.5 18h4"/></>,
+  },
+  {
+    label: 'Ekstrakurikuler', value: schoolInfo.stats.ekskul, suffix: '',
+    icon: <><path d="M7 3h10v5a5 5 0 0 1-10 0V3z"/><path d="M7 5H4a3 3 0 0 0 3 4M17 5h3a3 3 0 0 1-3 4M9 15.5V19M15 15.5V19M7 21h10"/></>,
+  },
+]
 
+export default function StatsSection() {
   return (
-    <section className="py-10 md:py-14 bg-primary-700 dark:bg-primary-900 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="absolute -top-10 -left-10 w-60 h-60 rounded-full bg-white" />
-        <div className="absolute -bottom-10 -right-10 w-80 h-80 rounded-full bg-white" />
-      </div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {stats.map((stat) => {
-            const IconComp = stat.icon
-            return (
-              <div key={stat.label} className="text-center">
-                <div className={`w-12 h-12 md:w-14 md:h-14 ${stat.bg} rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg`}>
-                  <IconComp size={22} className="text-white" strokeWidth={1.75} />
-                </div>
-                <p className="text-3xl md:text-4xl font-bold text-white mb-1 font-poppins">
-                  <Counter target={stat.value} suffix={stat.suffix} />
-                </p>
-                <p className="text-primary-200 text-xs md:text-sm font-medium font-roboto">{stat.label}</p>
+    <section className="py-10 md:py-14" style={{background:'#0a1840'}}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-center px-4 py-6 md:py-8 md:px-8">
+              <div className="flex justify-center mb-4">
+                <HexBadge variant="achieve" size="md">
+                  {stat.icon}
+                </HexBadge>
               </div>
-            )
-          })}
+              <p className="text-3xl md:text-4xl font-bold mb-1" style={{fontFamily:'Source Serif 4, serif', color:'#f6f1e4'}}>
+                <Counter target={stat.value} suffix={stat.suffix} />
+              </p>
+              <p className="text-xs uppercase tracking-widest opacity-70" style={{color:'#f6f1e4'}}>
+                {stat.label}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
