@@ -67,9 +67,8 @@
 .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
-/* Mobile tap */
+/* Mobile tap — khusus elemen interaktif utama saja */
 @media (max-width: 768px) {
-  button, a { min-height: 44px; }
   .btn-primary, .btn-outline { min-height: 44px; }
 }
 
