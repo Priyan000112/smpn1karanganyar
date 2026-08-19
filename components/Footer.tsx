@@ -17,13 +17,13 @@ export default function Footer() {
           {/* Branding */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-11 h-11 relative flex-shrink-0">
+              <div className="w-11 h-11 relative flex-shrink-0 rounded-full overflow-hidden bg-white">
                 <Image
                   src="/images/logo.jpg"
                   alt="Logo SMPN 1 Karanganyar"
-                  fill
-                  className="object-contain"
-                  sizes="44px"
+                  width={44}
+                  height={44}
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div>
