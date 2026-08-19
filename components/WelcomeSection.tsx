@@ -8,31 +8,29 @@ export default function WelcomeSection() {
 
           {/* Kolom kiri: foto + sambutan */}
           <div>
-            {/* Mobile: foto kiri, teks kanan. Desktop: sama */}
-            <div className="flex gap-4 sm:gap-6 items-start mb-6">
+            {/* Mobile: foto di atas tengah, teks di bawah full width */}
+            {/* Desktop: foto kiri, teks kanan */}
+            <div className="flex flex-col sm:flex-row gap-5 sm:gap-6 items-start">
 
               {/* Foto kepsek — bingkai siku emas */}
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 mx-auto sm:mx-0">
                 <div className="relative" style={{ width: 'fit-content' }}>
-                  {/* Siku emas 4 pojok */}
                   <span className="absolute -top-1.5 -left-1.5 w-5 h-5 md:w-6 md:h-6 border-t-2 border-l-2 z-10" style={{ borderColor: '#c9982f' }} />
                   <span className="absolute -top-1.5 -right-1.5 w-5 h-5 md:w-6 md:h-6 border-t-2 border-r-2 z-10" style={{ borderColor: '#c9982f' }} />
                   <span className="absolute -bottom-1.5 -left-1.5 w-5 h-5 md:w-6 md:h-6 border-b-2 border-l-2 z-10" style={{ borderColor: '#c9982f' }} />
                   <span className="absolute -bottom-1.5 -right-1.5 w-5 h-5 md:w-6 md:h-6 border-b-2 border-r-2 z-10" style={{ borderColor: '#c9982f' }} />
-                  {/* Garis ganda */}
                   <div className="p-1 md:p-1.5" style={{ border: '1.5px solid #10265c', outline: '1px solid #10265c', outlineOffset: '4px' }}>
-                    <div className="relative w-24 h-32 sm:w-32 sm:h-40 md:w-40 md:h-52 overflow-hidden">
+                    <div className="relative w-36 h-44 sm:w-32 sm:h-40 md:w-40 md:h-52 overflow-hidden">
                       <Image
                         src="/images/kepsek.jpg"
                         alt="Kepala Sekolah SMPN 1 Karanganyar"
                         fill
                         className="object-cover object-top"
-                        sizes="(max-width: 480px) 96px, (max-width: 768px) 128px, 160px"
+                        sizes="(max-width: 640px) 144px, (max-width: 768px) 128px, 160px"
                         priority
                       />
                     </div>
                   </div>
-                  {/* Seal hexagon */}
                   <div className="absolute -bottom-3 right-1 z-20">
                     <svg width="34" height="38" viewBox="0 0 52 58" fill="none">
                       <polygon points="26,2 48,15 48,43 26,56 4,43 4,15" fill="#e0b446" />
@@ -41,29 +39,28 @@ export default function WelcomeSection() {
                     </svg>
                   </div>
                 </div>
-                {/* Nama di bawah foto */}
-                <div className="text-center mt-4 md:mt-5" style={{maxWidth:'160px'}}>
-                  <p className="font-bold text-slate-800 dark:text-white text-xs sm:text-sm" style={{fontFamily:'Open Sans, sans-serif'}}>Kurniah, S.Pd</p>
-                  <p className="text-2xs sm:text-xs font-bold uppercase tracking-widest mt-0.5" style={{ color: '#c9982f', fontFamily:'Open Sans, sans-serif' }}>Kepala Sekolah</p>
+                <div className="text-center mt-4 md:mt-5">
+                  <p className="font-bold text-slate-800 dark:text-white text-sm" style={{fontFamily:'Open Sans, sans-serif'}}>Kurniah, S.Pd</p>
+                  <p className="text-xs font-bold uppercase tracking-widest mt-0.5" style={{ color: '#c9982f', fontFamily:'Open Sans, sans-serif' }}>Kepala Sekolah</p>
                 </div>
               </div>
 
               {/* Sambutan */}
               <div className="flex-1 min-w-0">
-                <span className="inline-block bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 text-2xs sm:text-xs font-semibold px-2 sm:px-3 py-1 rounded-full mb-2 sm:mb-3 uppercase tracking-wide" style={{fontFamily:'Open Sans, sans-serif'}}>
+                <span className="inline-block bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 text-xs font-semibold px-3 py-1 rounded-full mb-3 uppercase tracking-wide" style={{fontFamily:'Open Sans, sans-serif'}}>
                   Sambutan Kepala Sekolah
                 </span>
-                <h2 className="text-base sm:text-xl md:text-2xl font-bold text-slate-800 dark:text-white mb-2 sm:mb-3" style={{fontFamily:'Open Sans, sans-serif'}}>
+                <h2 className="text-xl md:text-2xl font-bold text-slate-800 dark:text-white mb-3" style={{fontFamily:'Open Sans, sans-serif'}}>
                   Selamat Datang
                 </h2>
-                <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 space-y-1.5 sm:space-y-2 leading-relaxed" style={{fontFamily:'Merriweather, serif'}}>
+                <div className="text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed" style={{fontFamily:'Merriweather, serif'}}>
                   <p className="font-medium text-slate-700 dark:text-slate-300">
                     Assalaamu'alaikum Warahmatullahi Wabarakatuh.
                   </p>
                   <p>
                     Puji syukur kami panjatkan ke hadirat Tuhan Yang Maha Esa atas limpahan rahmat-Nya sehingga website resmi SMP Negeri 1 Karanganyar dapat hadir sebagai sarana informasi dan publikasi kemajuan sekolah.
                   </p>
-                  <p className="hidden sm:block">
+                  <p>
                     SMP Negeri 1 Karanganyar berkomitmen menghasilkan lulusan berakhlak mulia, berprestasi, dan siap menghadapi tantangan global.
                   </p>
                   <p className="hidden md:block">
