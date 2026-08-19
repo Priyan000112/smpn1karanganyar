@@ -21,7 +21,8 @@ export default function HexBadge({ variant = 'on-cream', accent = 'default', siz
   const offset = (28 - gs / 2)
 
   const hexFill =
-    variant === 'achieve' ? '#e0b446' : '#f6f1e4'
+    variant === 'achieve' ? '#e0b446' :
+    variant === 'on-navy' ? '#10265c' : '#f6f1e4'
 
   const hexStroke =
     accent === 'maroon' ? '#8a2a2f' :

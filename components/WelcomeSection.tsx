@@ -8,21 +8,44 @@ export default function WelcomeSection() {
 
           {/* Kepala Sekolah */}
           <div className="flex flex-col xs:flex-row gap-5 items-start">
-            {/* Foto kepsek — style seperti referensi: bulat, shadow, nama di bawah */}
-            <div className="flex-shrink-0 mx-auto xs:mx-0 text-center">
-              <div className="relative w-36 h-36 xs:w-40 xs:h-40 md:w-44 md:h-44 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-white dark:border-slate-700 ring-4 ring-primary-600">
-                <Image
-                  src="/images/kepsek.jpg"
-                  alt="Kepala Sekolah SMPN 1 Karanganyar"
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 480px) 144px, 176px"
-                  priority
-                />
+            {/* Foto kepsek — Versi A: siku emas + seal hexagon */}
+            <div className="flex-shrink-0 mx-auto xs:mx-0">
+              {/* Wrapper posisi relatif untuk corner ornamen */}
+              <div className="relative" style={{ width: 'fit-content' }}>
+                {/* Siku emas 4 pojok */}
+                <span className="absolute -top-2 -left-2 w-6 h-6 md:w-7 md:h-7 border-t-2 border-l-2 z-10" style={{ borderColor: '#c9982f' }} />
+                <span className="absolute -top-2 -right-2 w-6 h-6 md:w-7 md:h-7 border-t-2 border-r-2 z-10" style={{ borderColor: '#c9982f' }} />
+                <span className="absolute -bottom-2 -left-2 w-6 h-6 md:w-7 md:h-7 border-b-2 border-l-2 z-10" style={{ borderColor: '#c9982f' }} />
+                <span className="absolute -bottom-2 -right-2 w-6 h-6 md:w-7 md:h-7 border-b-2 border-r-2 z-10" style={{ borderColor: '#c9982f' }} />
+
+                {/* Foto dengan garis ganda */}
+                <div className="p-1.5 md:p-2" style={{ border: '1.5px solid #10265c', outline: '1px solid #10265c', outlineOffset: '5px' }}>
+                  <div className="relative w-32 xs:w-36 md:w-44 h-44 xs:h-48 md:h-56 overflow-hidden">
+                    <Image
+                      src="/images/kepsek.jpg"
+                      alt="Kepala Sekolah SMPN 1 Karanganyar"
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 480px) 128px, (max-width: 768px) 144px, 176px"
+                      priority
+                    />
+                  </div>
+                </div>
+
+                {/* Seal hexagon di pojok kanan bawah */}
+                <div className="absolute -bottom-4 right-3 z-20">
+                  <svg width="44" height="50" viewBox="0 0 52 58" fill="none">
+                    <polygon points="26,2 48,15 48,43 26,56 4,43 4,15" fill="#e0b446" />
+                    <polygon points="26,2 48,15 48,43 26,56 4,43 4,15" fill="none" stroke="#0a1840" strokeWidth="1.4" />
+                    <path d="M26 16l3 7 7 1-5 5 1.5 7-6.5-3.5L19 36l1.5-7-5-5 7-1z" fill="#0a1840" />
+                  </svg>
+                </div>
               </div>
-              <div className="mt-3">
+
+              {/* Nama & jabatan */}
+              <div className="text-center mt-6 md:mt-7">
                 <p className="font-bold text-slate-800 dark:text-white text-sm font-poppins">Kurniah, S.Pd</p>
-                <p className="text-xs text-primary-600 dark:text-primary-400 font-medium mt-0.5 font-roboto">Kepala Sekolah</p>
+                <p className="text-xs font-bold uppercase tracking-widest mt-1" style={{ color: '#c9982f' }}>Kepala Sekolah</p>
               </div>
             </div>
 
