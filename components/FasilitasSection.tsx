@@ -38,12 +38,14 @@ export default function FasilitasSection() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-px" style={{ background: 'rgba(230,220,190,0.15)', border: '1px solid rgba(230,220,190,0.15)' }}>
           {fasilitasData.map((f) => (
-            <div key={f.nama} className="flex gap-4 p-5 md:p-6" style={{ background: '#10265c' }}>
-              <HexBadge variant="on-navy" accent={f.accent} size="md" glyphPath={f.glyph} />
-              <div>
-                <h3 className="font-bold text-sm md:text-base" style={{ color: '#f6f1e4', fontFamily: 'Open Sans, sans-serif' }}>{f.nama}</h3>
-                <p className="text-xs font-bold my-1" style={{ color: '#e0b446' }}>{f.jumlah}</p>
-                <p className="text-xs hidden sm:block" style={{ color: '#b9c2dc', lineHeight: 1.45, fontFamily: 'Merriweather, serif' }}>{f.deskripsi}</p>
+            <div key={f.nama} className="flex gap-2 md:gap-4 p-3 md:p-6" style={{ background: '#10265c' }}>
+              <div className="flex-shrink-0">
+                <HexBadge variant="on-navy" accent={f.accent} size="sm" glyphPath={f.glyph} />
+              </div>
+              <div className="min-w-0">
+                <h3 className="font-bold text-xs md:text-sm leading-tight" style={{ color: '#f6f1e4', fontFamily: 'Open Sans, sans-serif' }}>{f.nama}</h3>
+                <p className="text-2xs md:text-xs font-bold mt-0.5 mb-0.5 md:my-1" style={{ color: '#e0b446' }}>{f.jumlah}</p>
+                <p className="text-2xs hidden sm:block" style={{ color: '#b9c2dc', lineHeight: 1.45, fontFamily: 'Merriweather, serif' }}>{f.deskripsi}</p>
               </div>
             </div>
           ))}

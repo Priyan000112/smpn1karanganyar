@@ -37,18 +37,24 @@ export default function EkskulSection() {
 
         <div className="border-t border-slate-200 dark:border-slate-700">
           {ekskulData.map((ekskul) => (
-            <div key={ekskul.nama} className="grid grid-cols-[56px_1fr] sm:grid-cols-[56px_1fr_1fr] gap-4 sm:gap-5 items-center py-4 border-b border-slate-200 dark:border-slate-700">
-              <HexBadge variant="on-cream" accent={ekskul.accent} size="md" glyphPath={ekskul.glyph} />
-              <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base" style={{ fontFamily: 'Open Sans, sans-serif' }}>
-                {ekskul.nama}
-              </h3>
-              <div className="hidden sm:block">
-                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed" style={{ fontFamily: 'Merriweather, serif' }}>
-                  {ekskul.deskripsi}
-                </p>
-                <span className="block mt-1 text-xs font-bold" style={{ color: '#c9982f', fontFamily: 'Open Sans, sans-serif' }}>
-                  Pembina: {ekskul.pembina}
-                </span>
+            <div key={ekskul.nama} className="grid grid-cols-[44px_1fr] sm:grid-cols-[56px_1fr_1fr] gap-3 sm:gap-5 items-start py-3 md:py-4 border-b border-slate-200 dark:border-slate-700">
+              <HexBadge variant="on-cream" accent={ekskul.accent} size="sm" glyphPath={ekskul.glyph} />
+              <div className="sm:contents">
+                <h3 className="font-bold text-slate-800 dark:text-slate-100 text-sm md:text-base pt-1" style={{ fontFamily: 'Open Sans, sans-serif' }}>
+                  {ekskul.nama}
+                  {/* Deskripsi singkat di mobile */}
+                  <span className="block sm:hidden text-xs font-normal text-slate-500 dark:text-slate-400 mt-0.5" style={{ fontFamily: 'Merriweather, serif' }}>
+                    {ekskul.pembina}
+                  </span>
+                </h3>
+                <div className="hidden sm:block">
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed" style={{ fontFamily: 'Merriweather, serif' }}>
+                    {ekskul.deskripsi}
+                  </p>
+                  <span className="block mt-1 text-xs font-bold" style={{ color: '#c9982f', fontFamily: 'Open Sans, sans-serif' }}>
+                    Pembina: {ekskul.pembina}
+                  </span>
+                </div>
               </div>
             </div>
           ))}

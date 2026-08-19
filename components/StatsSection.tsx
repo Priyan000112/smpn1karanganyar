@@ -51,18 +51,18 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="py-10 md:py-14" style={{ background: '#0a1840' }}>
+    <section className="py-8 md:py-14" style={{ background: '#0a1840' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
           {stats.map((stat) => (
-            <div key={stat.label} className="text-center px-4 py-6 md:py-8 md:px-8">
-              <div className="flex justify-center mb-4">
-                <HexBadge variant="achieve" size="md" glyphPath={stat.glyph} />
+            <div key={stat.label} className="text-center px-2 py-5 md:py-8 md:px-8">
+              <div className="flex justify-center mb-2 md:mb-4">
+                <HexBadge variant="achieve" size="sm" glyphPath={stat.glyph} />
               </div>
-              <p className="text-3xl md:text-4xl font-bold mb-1" style={{ fontFamily: 'Open Sans, sans-serif', color: '#f6f1e4' }}>
+              <p className="text-xl md:text-4xl font-bold mb-0.5" style={{ fontFamily: 'Open Sans, sans-serif', color: '#f6f1e4' }}>
                 <Counter target={stat.value} suffix={stat.suffix} />
               </p>
-              <p className="text-xs uppercase tracking-widest opacity-70" style={{ color: '#f6f1e4' }}>
+              <p className="text-2xs md:text-xs uppercase tracking-widest opacity-70" style={{ color: '#f6f1e4' }}>
                 {stat.label}
               </p>
             </div>
