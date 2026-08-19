@@ -4,16 +4,15 @@ import { Target, ClipboardList, Award } from 'lucide-react'
 export const metadata: Metadata = { title: 'Visi & Misi' }
 
 const misiList = [
-  'Mewujudkan profil pelajar Pancasila yang beriman, bertaqwa kepada Tuhan YME dan berakhlak mulia, berkebhinekaan global, bergotong-royong, mandiri, bernalar kritis dan kreatif.',
-  'Mewujudkan lingkungan sekolah sebagai tempat perkembangan intelektual, keterampilan sosial, emosional, dan pengembangan budaya lokal dalam konteks kebhinekaan global.',
-  'Menumbuhkan karakter 4C (creative, critical thinking, collaboration, and communication) dalam proses pembelajaran dengan penguatan literasi dan numerasi sebagai ciri kompetensi abad 21 melalui pembelajaran berdiferensiasi yang menyenangkan.',
-  'Mewujudkan warga sekolah yang berwawasan lingkungan dan peduli terhadap kehidupan berkelanjutan sebagai bagian dari warga dunia.',
-  'Mengembangkan fasilitas dan sumber belajar yang dapat memfasilitasi pembelajaran peserta didik sesuai kebutuhan generasi masa kini.',
-  'Mewujudkan keorganisasian dan manajemen sekolah yang kolaboratif kolegial dalam rangka meningkatkan manajemen satuan pendidikan yang adaptif, berkarakter, dan menjamin mutu pendidikan.',
-  'Menjamin hak belajar setiap peserta didik tanpa terkecuali termasuk peserta didik yang berkebutuhan khusus (inklusi) dalam proses pembelajaran yang menjunjung tinggi nilai gotong-royong.',
-  'Menciptakan partisipasi aktif orang tua dan masyarakat dalam keberagaman yang mewadahi kreativitas peserta didik.',
-  'Mewujudkan asesmen yang memberi ruang bagi berkembangnya karakter pembelajar sepanjang hayat.',
-  'Mewujudkan lingkungan sekolah yang sehat, asri, nyaman dan aman.',
+  'Menanamkan keyakinan terhadap kebesaran Tuhan Yang Maha Esa.',
+  'Membudayakan sikap dan perilaku religius di lingkungan dalam dan luar sekolah.',
+  'Melaksanakan pembelajaran yang kreatif, inovatif, dan kompetitif.',
+  'Menumbuhkan minat, menggali, dan mengembangkan potensi melalui pembinaan yang intensif.',
+  'Menciptakan suasana yang kondusif, transparansi, dan penuh kekeluargaan antar warga sekolah.',
+  'Mempersiapkan warga sekolah dalam menghadapi perkembangan IPTEK.',
+  'Mengembangkan manajemen partisipatif dengan melibatkan seluruh komponen pendidikan dan stakeholder.',
+  'Mewujudkan insan yang berdisiplin tinggi dan berkepribadian Indonesia.',
+  'Mewujudkan pelestarian budaya daerah dan lingkungan hidup.',
 ]
 
 export default function VisiMisiPage() {
@@ -31,7 +30,7 @@ export default function VisiMisiPage() {
           <h2 className="text-2xl font-bold font-poppins">Visi</h2>
         </div>
         <p className="text-lg leading-relaxed text-primary-100 font-roboto">
-          Terwujudnya peserta didik yang berakhlak mulia, menjunjung tinggi toleransi dan cinta tanah air, serta memiliki kecakapan abad 21 untuk menjawab tantangan global.
+          "Berakhlak Mulia, Berdaya Saing dalam Prestasi, Berbudaya, dan Berwawasan Lingkungan"
         </p>
       </div>
 

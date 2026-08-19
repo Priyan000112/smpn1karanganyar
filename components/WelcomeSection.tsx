@@ -68,7 +68,7 @@ export default function WelcomeSection() {
                 <h3 className="font-bold text-lg font-poppins">Visi</h3>
               </div>
               <p className="text-primary-100 text-sm leading-relaxed font-roboto">
-                Terwujudnya peserta didik yang berakhlak mulia, menjunjung tinggi toleransi dan cinta tanah air, serta memiliki kecakapan abad 21 untuk menjawab tantangan global.
+                "Berakhlak Mulia, Berdaya Saing dalam Prestasi, Berbudaya, dan Berwawasan Lingkungan"
               </p>
             </div>
 
@@ -82,10 +82,10 @@ export default function WelcomeSection() {
               </div>
               <ul className="space-y-2.5">
                 {[
-                  'Mewujudkan profil pelajar Pancasila yang beriman, bertaqwa, dan berakhlak mulia',
-                  'Menumbuhkan karakter 4C: Creative, Critical, Collaborative, Communicative',
-                  'Mengembangkan fasilitas dan sumber belajar yang modern dan inovatif',
-                  'Menjamin hak belajar setiap peserta didik termasuk peserta didik inklusi',
+                  'Menanamkan keyakinan terhadap kebesaran Tuhan Yang Maha Esa',
+                  'Melaksanakan pembelajaran yang kreatif, inovatif, dan kompetitif',
+                  'Menumbuhkan minat dan mengembangkan potensi melalui pembinaan intensif',
+                  'Mewujudkan pelestarian budaya daerah dan lingkungan hidup',
                 ].map((misi, i) => (
                   <li key={i} className="flex gap-2.5 text-sm text-slate-600 dark:text-slate-400 font-roboto">
                     <span className="w-5 h-5 rounded-full bg-primary-100 dark:bg-primary-900/40 text-primary-600 dark:text-primary-400 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
