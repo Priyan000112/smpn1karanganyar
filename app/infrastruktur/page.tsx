@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 import { fasilitasList } from '@/lib/data'
 import Icon from '@/components/Icon'
-import { Monitor, Projector, Tablet, Library, Wifi, Camera } from 'lucide-react'
+import { Monitor, MonitorPlay, Tablet, Library, Wifi, Camera } from 'lucide-react'
 
 export const metadata: Metadata = { title: 'Infrastruktur & Fasilitas' }
 
 const learningTools = [
   { nama: 'Chromebook', jumlah: '120 unit', desc: 'Untuk pembelajaran berbasis digital dan Google Workspace', icon: Monitor },
-  { nama: 'Proyektor Interaktif', jumlah: '30 unit', desc: 'Di setiap ruang kelas untuk presentasi dan pembelajaran visual', icon: Projector },
+  { nama: 'Proyektor Interaktif', jumlah: '30 unit', desc: 'Di setiap ruang kelas untuk presentasi dan pembelajaran visual', icon: MonitorPlay },
   { nama: 'Papan Tulis Digital', jumlah: '15 unit', desc: 'Smartboard untuk ruang khusus pembelajaran interaktif', icon: Tablet },
   { nama: 'E-Library', jumlah: '1 platform', desc: 'Akses 10.000+ e-book dan jurnal pendidikan', icon: Library },
   { nama: 'WiFi Campus', jumlah: '25 titik AP', desc: 'Jaringan WiFi berkecepatan tinggi di seluruh area sekolah', icon: Wifi },

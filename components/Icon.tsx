@@ -1,15 +1,30 @@
 import {
-  Tent, Flag, HeartPulse, CircleDot, Volleyball, Dribbble,
+  Tent, Flag, HeartPulse, CircleDot, Circle, Dribbble,
   Music2, Music, FlaskConical, Languages, Cpu, Shield,
   School, Monitor, BookOpen, Dumbbell, Building2,
   UtensilsCrossed, Star, LucideProps,
 } from 'lucide-react'
 
 const iconMap: Record<string, React.FC<LucideProps>> = {
-  Tent, Flag, HeartPulse, CircleDot, Volleyball, Dribbble,
-  Music2, Music, FlaskConical, Languages, Cpu, Shield,
-  School, Monitor, BookOpen, Dumbbell, Building2,
-  UtensilsCrossed, Star,
+  Tent,
+  Flag,
+  HeartPulse,
+  CircleDot,
+  Volleyball: Circle,
+  Dribbble,
+  Music2,
+  Music,
+  FlaskConical,
+  Languages,
+  Cpu,
+  Shield,
+  School,
+  Monitor,
+  BookOpen,
+  Dumbbell,
+  Building2,
+  UtensilsCrossed,
+  Star,
 }
 
 interface Props extends LucideProps {

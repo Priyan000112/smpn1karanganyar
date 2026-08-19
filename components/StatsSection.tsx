@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { GraduationCap, Users, BookUser, Trophy } from 'lucide-react'
+import { GraduationCap, Users, ClipboardList, Trophy } from 'lucide-react'
 import { schoolInfo } from '@/lib/data'
 
 function Counter({ target, suffix = '' }: { target: number; suffix?: string }) {
@@ -62,7 +62,7 @@ export default function StatsSection() {
       label: 'Murid Aktif',
       value: schoolInfo.stats.murid,
       suffix: '+',
-      icon: BookUser,
+      icon: ClipboardList,
       iconBg: 'bg-violet-500',
     },
     {
