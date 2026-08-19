@@ -1,4 +1,5 @@
 import { fasilitasList } from '@/lib/data'
+import Icon from '@/components/Icon'
 import Link from 'next/link'
 
 export default function FasilitasSection() {
@@ -24,11 +25,13 @@ export default function FasilitasSection() {
           {fasilitasList.map((f) => (
             <div
               key={f.nama}
-              className="bg-white/10 hover:bg-white/20 active:bg-white/25 backdrop-blur rounded-xl md:rounded-2xl p-4 md:p-5 transition-colors border border-white/10 hover:border-white/20"
+              className="bg-white/10 hover:bg-white/20 active:bg-white/25 backdrop-blur rounded-xl md:rounded-2xl p-4 md:p-5 transition-colors border border-white/10 hover:border-white/20 group"
             >
-              <div className="text-2xl md:text-3xl mb-2 md:mb-3">{f.icon}</div>
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-white/15 group-hover:bg-white/25 rounded-xl flex items-center justify-center mb-3 transition-colors">
+                <Icon name={f.icon} size={20} className="text-white" strokeWidth={1.75} />
+              </div>
               <h3 className="font-semibold text-white text-xs md:text-sm mb-0.5 font-poppins">{f.nama}</h3>
-              <p className="text-gold-400 text-2xs md:text-xs font-bold mb-1 font-roboto">{f.jumlah}</p>
+              <p className="text-amber-300 text-2xs md:text-xs font-bold mb-1 font-roboto">{f.jumlah}</p>
               <p className="text-primary-200 text-2xs md:text-xs font-roboto hidden sm:block">{f.deskripsi}</p>
             </div>
           ))}

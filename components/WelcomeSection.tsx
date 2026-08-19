@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { Target, ClipboardList, Award, Leaf } from 'lucide-react'
 
 export default function WelcomeSection() {
   return (
@@ -8,7 +9,6 @@ export default function WelcomeSection() {
 
           {/* Kepala Sekolah */}
           <div className="flex flex-col xs:flex-row gap-5 items-start">
-            {/* Foto kepsek */}
             <div className="flex-shrink-0 mx-auto xs:mx-0">
               <div className="relative w-36 xs:w-40 md:w-44 h-48 xs:h-52 md:h-56 rounded-2xl overflow-hidden shadow-lg ring-4 ring-primary-100 dark:ring-primary-900">
                 <Image
@@ -30,7 +30,6 @@ export default function WelcomeSection() {
               </div>
             </div>
 
-            {/* Sambutan */}
             <div className="flex-1 min-w-0">
               <span className="inline-block bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 text-xs font-semibold px-3 py-1 rounded-full mb-3 font-poppins uppercase tracking-wide">
                 Sambutan Kepala Sekolah
@@ -62,8 +61,10 @@ export default function WelcomeSection() {
           <div className="space-y-4 md:space-y-5">
             {/* Visi */}
             <div className="bg-primary-600 rounded-2xl p-5 md:p-6 text-white shadow-md">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-2xl">🎯</span>
+              <div className="flex items-center gap-2.5 mb-3">
+                <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Target size={16} className="text-white" strokeWidth={2} />
+                </div>
                 <h3 className="font-bold text-lg font-poppins">Visi</h3>
               </div>
               <p className="text-primary-100 text-sm leading-relaxed font-roboto">
@@ -72,9 +73,11 @@ export default function WelcomeSection() {
             </div>
 
             {/* Misi ringkas */}
-            <div className="card p-5 md:p-6 !overflow-visible">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-2xl">📋</span>
+            <div className="card p-5 md:p-6">
+              <div className="flex items-center gap-2.5 mb-4">
+                <div className="w-8 h-8 bg-primary-100 dark:bg-primary-900/40 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <ClipboardList size={16} className="text-primary-600 dark:text-primary-400" strokeWidth={2} />
+                </div>
                 <h3 className="font-bold text-slate-800 dark:text-white font-poppins">Misi (Ringkasan)</h3>
               </div>
               <ul className="space-y-2.5">
@@ -94,17 +97,21 @@ export default function WelcomeSection() {
               </ul>
             </div>
 
-            {/* Badges baris bawah */}
+            {/* Badges */}
             <div className="grid grid-cols-2 gap-3">
-              <div className="bg-gold-500/10 dark:bg-gold-500/5 border border-gold-500/30 dark:border-gold-500/20 rounded-xl p-4 flex items-center gap-3">
-                <span className="text-2xl">🏆</span>
+              <div className="bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-800/50 rounded-xl p-4 flex items-center gap-3">
+                <div className="w-9 h-9 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Award size={18} className="text-amber-600 dark:text-amber-400" strokeWidth={1.75} />
+                </div>
                 <div>
-                  <p className="font-bold text-gold-600 dark:text-gold-400 text-sm font-poppins">Akreditasi A</p>
+                  <p className="font-bold text-amber-700 dark:text-amber-400 text-sm font-poppins">Akreditasi A</p>
                   <p className="text-xs text-slate-500 dark:text-slate-400 font-roboto">BAN-S/M</p>
                 </div>
               </div>
               <div className="bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-200 dark:border-emerald-800/50 rounded-xl p-4 flex items-center gap-3">
-                <span className="text-2xl">🌿</span>
+                <div className="w-9 h-9 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Leaf size={18} className="text-emerald-600 dark:text-emerald-400" strokeWidth={1.75} />
+                </div>
                 <div>
                   <p className="font-bold text-emerald-700 dark:text-emerald-400 text-sm font-poppins">Adiwiyata</p>
                   <p className="text-xs text-slate-500 dark:text-slate-400 font-roboto">Tingkat Provinsi</p>

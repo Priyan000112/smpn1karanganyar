@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
+import { MapPin, CalendarDays, FileText, Phone } from 'lucide-react'
 
 export const metadata: Metadata = { title: 'SPMB 2026/2027' }
 
 const jalur = [
-  { nama: 'Jalur Zonasi', persen: '55%', desc: 'Berdasarkan jarak domisili tempat tinggal peserta didik ke sekolah', icon: '📍', color: 'bg-blue-500' },
-  { nama: 'Jalur Afirmasi', persen: '15%', desc: 'Untuk peserta didik dari keluarga ekonomi tidak mampu / penerima KIP', icon: '💙', color: 'bg-emerald-500' },
-  { nama: 'Jalur Perpindahan Tugas', persen: '5%', desc: 'Untuk anak guru, TNI, Polri, dan ASN yang baru pindah tugas', icon: '🏛️', color: 'bg-violet-500' },
-  { nama: 'Jalur Prestasi', persen: '25%', desc: 'Berdasarkan nilai rapor atau prestasi akademik/non-akademik', icon: '🏆', color: 'bg-amber-500' },
+  { nama: 'Jalur Zonasi', persen: '55%', desc: 'Berdasarkan jarak domisili tempat tinggal peserta didik ke sekolah', color: 'bg-blue-500', textColor: 'text-blue-600 dark:text-blue-400', bg: 'bg-blue-50 dark:bg-blue-900/20' },
+  { nama: 'Jalur Afirmasi', persen: '15%', desc: 'Untuk peserta didik dari keluarga ekonomi tidak mampu / penerima KIP', color: 'bg-emerald-500', textColor: 'text-emerald-600 dark:text-emerald-400', bg: 'bg-emerald-50 dark:bg-emerald-900/20' },
+  { nama: 'Jalur Perpindahan Tugas', persen: '5%', desc: 'Untuk anak guru, TNI, Polri, dan ASN yang baru pindah tugas', color: 'bg-violet-500', textColor: 'text-violet-600 dark:text-violet-400', bg: 'bg-violet-50 dark:bg-violet-900/20' },
+  { nama: 'Jalur Prestasi', persen: '25%', desc: 'Berdasarkan nilai rapor atau prestasi akademik/non-akademik', color: 'bg-amber-500', textColor: 'text-amber-600 dark:text-amber-400', bg: 'bg-amber-50 dark:bg-amber-900/20' },
 ]
 
 const jadwal = [
@@ -32,9 +33,9 @@ const persyaratan = [
 
 export default function SpmbPage() {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-12">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 md:py-12">
       <div className="text-center mb-10">
-        <span className="inline-block bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+        <span className="inline-block bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300 text-xs font-semibold px-3 py-1 rounded-full mb-3 font-poppins uppercase tracking-wide">
           Tahun Ajaran 2026/2027
         </span>
         <h1 className="section-title">Sistem Penerimaan Murid Baru</h1>
@@ -43,19 +44,19 @@ export default function SpmbPage() {
 
       {/* Jalur */}
       <section className="mb-10">
-        <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-6">Jalur Penerimaan</h2>
+        <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-6 font-poppins">Jalur Penerimaan</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {jalur.map((j) => (
-            <div key={j.nama} className="card p-6 flex gap-4">
-              <div className={`w-14 h-14 ${j.color} rounded-2xl flex items-center justify-center text-2xl flex-shrink-0`}>
-                {j.icon}
+            <div key={j.nama} className={`card p-5 flex gap-4 border-l-4 ${j.color}`}>
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${j.bg}`}>
+                <MapPin size={20} className={j.textColor} strokeWidth={1.75} />
               </div>
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <h3 className="font-bold text-slate-800 dark:text-white">{j.nama}</h3>
-                  <span className="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs px-2 py-0.5 rounded-full font-bold">{j.persen}</span>
+                  <h3 className="font-bold text-slate-800 dark:text-white font-poppins text-sm">{j.nama}</h3>
+                  <span className="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs px-2 py-0.5 rounded-full font-bold font-poppins">{j.persen}</span>
                 </div>
-                <p className="text-sm text-slate-500 dark:text-slate-400">{j.desc}</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400 font-roboto">{j.desc}</p>
               </div>
             </div>
           ))}
@@ -65,14 +66,17 @@ export default function SpmbPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Jadwal */}
         <section>
-          <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4 flex items-center gap-2">📅 Jadwal Pendaftaran</h2>
+          <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4 flex items-center gap-2 font-poppins">
+            <CalendarDays size={20} className="text-primary-600" strokeWidth={1.75} />
+            Jadwal Pendaftaran
+          </h2>
           <div className="card overflow-hidden">
             <table className="w-full text-sm">
               <tbody className="divide-y dark:divide-slate-700">
                 {jadwal.map((item, i) => (
                   <tr key={i} className={i % 2 === 0 ? 'bg-white dark:bg-slate-800' : 'bg-slate-50 dark:bg-slate-900'}>
-                    <td className="px-4 py-3 text-slate-700 dark:text-slate-300">{item.kegiatan}</td>
-                    <td className="px-4 py-3 text-primary-600 dark:text-primary-400 font-medium whitespace-nowrap">{item.tanggal}</td>
+                    <td className="px-4 py-3 text-slate-700 dark:text-slate-300 font-roboto">{item.kegiatan}</td>
+                    <td className="px-4 py-3 text-primary-600 dark:text-primary-400 font-medium font-roboto whitespace-nowrap">{item.tanggal}</td>
                   </tr>
                 ))}
               </tbody>
@@ -82,11 +86,14 @@ export default function SpmbPage() {
 
         {/* Persyaratan */}
         <section>
-          <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4 flex items-center gap-2">📋 Persyaratan</h2>
+          <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4 flex items-center gap-2 font-poppins">
+            <FileText size={20} className="text-primary-600" strokeWidth={1.75} />
+            Persyaratan
+          </h2>
           <div className="card p-5">
             <ul className="space-y-3">
               {persyaratan.map((p, i) => (
-                <li key={i} className="flex gap-3 text-sm">
+                <li key={i} className="flex gap-3 text-sm font-roboto">
                   <span className="w-6 h-6 bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-400 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
                     {i + 1}
                   </span>
@@ -99,14 +106,15 @@ export default function SpmbPage() {
       </div>
 
       {/* CTA */}
-      <div className="mt-10 bg-primary-600 rounded-2xl p-8 text-center text-white">
-        <h3 className="text-2xl font-bold mb-2">Siap Mendaftar?</h3>
-        <p className="text-primary-200 mb-6">Pendaftaran dilakukan secara online melalui portal SPMB Kabupaten Karanganyar</p>
+      <div className="mt-10 bg-primary-600 rounded-2xl p-6 md:p-8 text-center text-white">
+        <h3 className="text-2xl font-bold mb-2 font-poppins">Siap Mendaftar?</h3>
+        <p className="text-primary-200 mb-6 font-roboto">Pendaftaran dilakukan secara online melalui portal SPMB Kabupaten Karanganyar</p>
         <div className="flex gap-4 justify-center flex-wrap">
-          <a href="#" className="bg-white text-primary-700 font-semibold px-6 py-3 rounded-lg hover:bg-primary-50 transition-colors">
+          <a href="#" className="inline-flex items-center gap-2 bg-white text-primary-700 font-semibold px-6 py-3 rounded-lg hover:bg-primary-50 transition-colors font-poppins text-sm">
             Daftar Sekarang
           </a>
-          <a href="tel:02714950559" className="border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition-colors">
+          <a href="tel:02714950559" className="inline-flex items-center gap-2 border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition-colors font-poppins text-sm">
+            <Phone size={16} strokeWidth={2} />
             Hubungi Kami
           </a>
         </div>
