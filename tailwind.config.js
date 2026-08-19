@@ -28,11 +28,12 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans:          ['Poppins', 'sans-serif'],
+        sans:          ['Open Sans', 'sans-serif'],
         body:          ['Merriweather', 'serif'],
-        poppins:       ['Poppins', 'sans-serif'],
+        'open-sans':   ['Open Sans', 'sans-serif'],
         merriweather:  ['Merriweather', 'serif'],
-        roboto:        ['Merriweather', 'serif'], // alias agar class lama tetap jalan
+        poppins:       ['Open Sans', 'sans-serif'], // alias lama
+        roboto:        ['Merriweather', 'serif'],   // alias lama
       },
       fontSize: {
         '2xs': '0.625rem',

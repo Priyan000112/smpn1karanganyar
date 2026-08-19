@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -21,14 +21,15 @@
     color: rgb(var(--foreground-rgb));
     background: rgb(var(--background-rgb));
     font-family: 'Merriweather', serif;
+    font-size: 17px;
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     line-height: 1.2;
   }
-  p, span, li, a, td, th {
+  p, span, li, a, td, th, button, input, select, textarea {
     font-family: 'Merriweather', serif;
   }
 }
