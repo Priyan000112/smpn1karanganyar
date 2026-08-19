@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { MapPin, Phone, Mail, Instagram, Facebook, Youtube } from 'lucide-react'
 import { schoolInfo, navItems } from '@/lib/data'
 
@@ -16,12 +17,18 @@ export default function Footer() {
           {/* Branding */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-11 h-11 bg-primary-600 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-md flex-shrink-0">
-                SMPN<br />1 KRA
+              <div className="w-11 h-11 relative flex-shrink-0">
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Logo SMPN 1 Karanganyar"
+                  fill
+                  className="object-contain"
+                  sizes="44px"
+                />
               </div>
               <div>
                 <p className="font-bold text-white text-sm font-poppins">{schoolInfo.shortName}</p>
-                <p className="text-xs text-slate-400 font-roboto">{schoolInfo.tagline}</p>
+                <p className="text-xs text-slate-400 font-roboto leading-snug">{schoolInfo.tagline}</p>
               </div>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed font-roboto mb-4">

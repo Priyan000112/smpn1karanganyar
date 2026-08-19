@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Menu, X, ChevronDown, Sun, Moon, Search } from 'lucide-react'
 import { navItems, schoolInfo } from '@/lib/data'
@@ -77,8 +78,15 @@ export default function Navbar() {
 
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 flex-shrink-0 min-w-0">
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-primary-700 rounded-xl flex items-center justify-center text-white font-bold text-xs md:text-sm flex-shrink-0 shadow-md">
-                SMPN<br />1 KRA
+              <div className="w-10 h-10 md:w-12 md:h-12 relative flex-shrink-0">
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Logo SMPN 1 Karanganyar"
+                  fill
+                  className="object-contain"
+                  sizes="48px"
+                  priority
+                />
               </div>
               <div className="min-w-0">
                 <p className="font-bold text-slate-800 dark:text-white text-sm md:text-base leading-tight truncate font-poppins">
