@@ -83,8 +83,13 @@ export default function WelcomeSection() {
               <ul className="space-y-2.5">
                 {[
                   'Menanamkan keyakinan terhadap kebesaran Tuhan Yang Maha Esa',
+                  'Membudayakan sikap dan perilaku religius di lingkungan dalam dan luar sekolah',
                   'Melaksanakan pembelajaran yang kreatif, inovatif, dan kompetitif',
-                  'Menumbuhkan minat dan mengembangkan potensi melalui pembinaan intensif',
+                  'Menumbuhkan minat, menggali, dan mengembangkan potensi melalui pembinaan yang intensif',
+                  'Menciptakan suasana yang kondusif, transparansi, dan penuh kekeluargaan antar warga sekolah',
+                  'Mempersiapkan warga sekolah dalam menghadapi perkembangan IPTEK',
+                  'Mengembangkan manajemen partisipatif dengan melibatkan seluruh komponen pendidikan dan stakeholder',
+                  'Mewujudkan insan yang berdisiplin tinggi dan berkepribadian Indonesia',
                   'Mewujudkan pelestarian budaya daerah dan lingkungan hidup',
                 ].map((misi, i) => (
                   <li key={i} className="flex gap-2.5 text-sm text-slate-600 dark:text-slate-400 font-roboto">

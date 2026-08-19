@@ -3,7 +3,7 @@ export const schoolInfo = {
   name: 'SMP Negeri 1 Karanganyar',
   shortName: 'SMPN 1 Karanganyar',
   tagline: 'Berakhlak Mulia, Berdaya Saing dalam Prestasi, Berbudaya, dan Berwawasan Lingkungan',
-  address: 'Jl. Ngaliyan No.1, Karanganyar, Kab. Karanganyar, Jawa Tengah 57714',
+  address: 'Jl. Raya Karanganyar, Kec. Karanganyar, Kab. Purbalingga, Jawa Tengah 53344',
   phone: '(0271) 495059',
   email: 'smpn1karanganyar@gmail.com',
   website: 'https://www.smpn1karanganyar.sch.id',
