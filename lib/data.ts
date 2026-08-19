@@ -132,25 +132,13 @@ export const heroSlides = [
 
 export const guruList = [
   { name: 'Drs. Bambang Sutrisno, M.Pd', jabatan: 'Kepala Sekolah', mapel: '', foto: '' },
-  { name: 'Sri Wahyuni, S.Pd', jabatan: 'Guru', mapel: 'IPA', foto: '' },
-  { name: 'Agus Prasetyo, S.Pd', jabatan: 'Guru', mapel: 'IPA', foto: '' },
-  { name: 'Dra. Endang Susilowati', jabatan: 'Guru', mapel: 'IPS', foto: '' },
-  { name: 'Heru Santoso, S.Pd', jabatan: 'Guru', mapel: 'IPS', foto: '' },
-  { name: 'Dewi Rahmawati, S.Pd', jabatan: 'Guru', mapel: 'Matematika', foto: '' },
-  { name: 'Siti Nurhayati, S.Pd', jabatan: 'Guru', mapel: 'Matematika', foto: '' },
-  { name: 'Budi Hartono, S.Pd', jabatan: 'Guru', mapel: 'Matematika', foto: '' },
-  { name: 'Rini Astuti, S.Pd', jabatan: 'Guru', mapel: 'Bahasa Indonesia', foto: '' },
-  { name: 'Wahyu Purnomo, S.Pd', jabatan: 'Guru', mapel: 'Bahasa Indonesia', foto: '' },
-  { name: 'Eka Fitriani, S.Pd', jabatan: 'Guru', mapel: 'Bahasa Inggris', foto: '' },
-  { name: 'Joko Susilo, S.Pd', jabatan: 'Guru', mapel: 'Bahasa Inggris', foto: '' },
-  { name: 'Nurul Hidayah, S.Ag', jabatan: 'Guru', mapel: 'PAI', foto: '' },
-  { name: 'Supriyanto, S.Ag', jabatan: 'Guru', mapel: 'PAI', foto: '' },
-  { name: 'Yuni Kristiana, S.Pd', jabatan: 'Guru', mapel: 'Pendidikan Pancasila', foto: '' },
-  { name: 'Andi Kurniawan, S.Pd', jabatan: 'Guru', mapel: 'TIK', foto: '' },
-  { name: 'Lestari Indah, S.Pd', jabatan: 'Guru', mapel: 'Prakarya', foto: '' },
-  { name: 'Martono, S.Pd', jabatan: 'Guru', mapel: 'BK', foto: '' },
-  { name: 'Fitri Handayani, S.Pd', jabatan: 'Guru', mapel: 'BK', foto: '' },
-  { name: 'Antonius Susanto, S.PAK', jabatan: 'Guru', mapel: 'Agama Kristen', foto: '' },
+  { name: 'Septiana Cahyasari, S.Pd', jabatan: 'Guru', mapel: 'IPA', foto: '' },
+  { name: 'Henry Suryani, S.Pd', jabatan: 'Guru', mapel: 'IPS', foto: '' },
+  { name: 'Dian Sari Noviati, S.Kom', jabatan: 'Guru', mapel: 'TIK', foto: '' },
+  { name: 'Yuli Hastuti, S.Pd', jabatan: 'Guru', mapel: 'Bahasa Inggris', foto: '' },
+  { name: 'Dra. Farida Lestari', jabatan: 'Guru', mapel: 'Bahasa Indonesia', foto: '' },
+  { name: 'Sumarmi, S.Ag', jabatan: 'Guru', mapel: 'Pendidikan Agama Islam', foto: '' },
+  { name: 'Sulastriningsih, S.Pd', jabatan: 'Guru', mapel: 'Matematika', foto: '' },
 ]
 
 export const stafList = [
