@@ -5,6 +5,7 @@ import BlogSection from '@/components/BlogSection'
 import EkskulSection from '@/components/EkskulSection'
 import GuruSection from '@/components/GuruSection'
 import FasilitasSection from '@/components/FasilitasSection'
+import LokasiSection from '@/components/LokasiSection'
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <FasilitasSection />
       <GuruSection />
       <BlogSection />
+      <LokasiSection />
     </>
   )
 }

@@ -109,17 +109,27 @@ export default function Footer() {
               </li>
             </ul>
 
-            {/* Map placeholder */}
-            <div className="mt-4 rounded-xl overflow-hidden bg-slate-800 h-20 flex items-center justify-center border border-slate-700">
-              <a
-                href={`https://maps.google.com/?q=SMPN+1+Karanganyar`}
-                target="_blank"
-                rel="noreferrer"
-                className="text-slate-400 hover:text-primary-400 text-xs text-center transition-colors font-roboto flex items-center gap-2"
-              >
-                <MapPin size={14} /> Lihat di Google Maps
-              </a>
+            {/* Google Maps Embed */}
+            <div className="mt-4 rounded-xl overflow-hidden border border-slate-700 h-40">
+              <iframe
+                src="https://maps.google.com/maps?q=SMP+Negeri+1+Karanganyar+Purbalingga&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Lokasi SMP Negeri 1 Karanganyar"
+              />
             </div>
+            <a
+              href="https://maps.google.com/?q=SMP+Negeri+1+Karanganyar+Purbalingga"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-2 inline-flex items-center gap-1.5 text-primary-400 hover:text-primary-300 text-xs font-roboto transition-colors"
+            >
+              <MapPin size={12} /> Buka di Google Maps ↗
+            </a>
           </div>
         </div>
       </div>
