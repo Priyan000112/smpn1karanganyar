@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -51,21 +52,11 @@ export default function Navbar() {
       'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
       scrolled ? 'shadow-lg' : ''
     )}>
-      {/* Top bar — mirip referensi: biru gelap, teks kecil */}
-      <div className="bg-primary-900 dark:bg-slate-950 text-white py-1.5 px-4 hidden sm:block">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-xs font-roboto">
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 opacity-90">
-              <span>📍</span>
-              <span className="hidden md:inline">{schoolInfo.address}</span>
-              <span className="md:hidden">Karanganyar, Jawa Tengah</span>
-            </span>
-          </div>
-          <div className="flex items-center gap-4 opacity-90">
-            <span>☎️ {schoolInfo.phone}</span>
-            <span className="hidden lg:inline">✉️ {schoolInfo.email}</span>
-          </div>
-        </div>
+      {/* Top bar — running text */}
+      <div className="bg-primary-900 dark:bg-slate-950 text-white py-1.5 overflow-hidden hidden sm:block" style={{fontSize:'12px',whiteSpace:'nowrap'}}>
+        {React.createElement('marquee', {scrollamount:'5', direction:'left', behavior:'scroll'},
+          'Selamat Datang di Website Resmi SMP Negeri 1 Karanganyar  ✦  "The Nicest Place for The Bright Future"  ✦  Informasi SPMB Tahun Ajaran 2026/2027 — Kunjungi Menu SPMB  ✦  Raih Prestasi Terbaik Bersama SMPN 1 Karanganyar  ✦  Hubungi Kami: (0271) 495059 | smpn1karanganyar@gmail.com  ✦  Selamat Datang di Website Resmi SMP Negeri 1 Karanganyar  ✦  "The Nicest Place for The Bright Future"'
+        )}
       </div>
 
       {/* Main navbar — putih dengan shadow */}

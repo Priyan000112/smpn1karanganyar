@@ -48,20 +48,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="bg-slate-50 dark:bg-slate-950 min-h-screen">
-        <div style={{backgroundColor:'#1e3a8a',color:'white',padding:'5px 0',borderBottom:'1px solid rgba(255,255,255,0.15)',overflow:'hidden',fontSize:'12px',whiteSpace:'nowrap'}}>
-          {React.createElement('marquee', {scrollamount:'6', direction:'left', behavior:'scroll'},
-            'Selamat Datang di Website Resmi SMP Negeri 1 Karanganyar  ✦  "The Nicest Place for The Bright Future"  ✦  Informasi SPMB Tahun Ajaran 2026/2027 — Kunjungi Menu SPMB untuk Info Selengkapnya  ✦  Raih Prestasi Terbaik Bersama SMPN 1 Karanganyar  ✦  Hubungi Kami: (0271) 495059 | smpn1karanganyar@gmail.com'
-          )}
-        </div>
         <Navbar />
-        {/*
-          pt kalkulasi:
-          - running text: 32px
-          - top bar navbar: 28px (sm ke atas)
-          - navbar: 64px (mobile) / 70px (md ke atas)
-          - total mobile: 96px (32+64), sm+: 130px (32+28+70)
-        */}
-        <main className="pt-24 sm:pt-[130px]">
+        <main className="pt-16 sm:pt-[98px]">
           {children}
         </main>
         <Footer />
