@@ -116,7 +116,7 @@ export const heroSlides = [
     id: 4,
     title: 'Kegiatan Seni',
     subtitle: 'Mengembangkan minat seni melalui seni tari, musik, dan drama yang kreatif',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=1200&q=80',
     cta: { label: 'Galeri Kegiatan', href: '/galeri' },
     badge: 'Seni & Budaya',
   },
