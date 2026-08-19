@@ -101,8 +101,8 @@ export default function HeroSlider() {
             onClick={() => goTo(i)}
             className={`transition-all duration-300 rounded-full ${
               i === current
-                ? 'w-4 sm:w-8 h-1.5 sm:h-2.5 bg-gold-400'
-                : 'w-1.5 sm:w-2.5 h-1.5 sm:h-2.5 bg-white/50 hover:bg-white/70'
+                ? 'w-2 h-2 sm:w-8 sm:h-2.5 bg-gold-400'
+                : 'w-2 h-2 sm:w-2.5 sm:h-2.5 bg-white/50 hover:bg-white/70'
             }`}
             aria-label={`Slide ${i + 1}`}
           />
