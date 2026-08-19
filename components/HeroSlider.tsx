@@ -94,15 +94,15 @@ export default function HeroSlider() {
       </button>
 
       {/* Dots */}
-      <div className="absolute bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2 z-20 flex gap-1.5 sm:gap-2">
+      <div className="absolute bottom-2 sm:bottom-5 left-1/2 -translate-x-1/2 z-20 flex gap-1 sm:gap-2">
         {heroSlides.map((_, i) => (
           <button
             key={i}
             onClick={() => goTo(i)}
             className={`transition-all duration-300 rounded-full ${
               i === current
-                ? 'w-6 sm:w-8 h-2 sm:h-2.5 bg-gold-400'
-                : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-white/50 hover:bg-white/70'
+                ? 'w-4 sm:w-8 h-1.5 sm:h-2.5 bg-gold-400'
+                : 'w-1.5 sm:w-2.5 h-1.5 sm:h-2.5 bg-white/50 hover:bg-white/70'
             }`}
             aria-label={`Slide ${i + 1}`}
           />
