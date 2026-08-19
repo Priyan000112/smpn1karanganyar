@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import React from 'react'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -48,10 +49,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-slate-50 dark:bg-slate-950 min-h-screen">
         <div style={{backgroundColor:'#1e3a8a',color:'white',padding:'5px 0',borderBottom:'1px solid rgba(255,255,255,0.15)',overflow:'hidden',fontSize:'12px',whiteSpace:'nowrap'}}>
-          {/* @ts-expect-error marquee is valid HTML */}
-          <marquee scrollamount={6} direction="left" behavior="scroll">
-            Selamat Datang di Website Resmi SMP Negeri 1 Karanganyar &nbsp;✦&nbsp; &quot;The Nicest Place for The Bright Future&quot; &nbsp;✦&nbsp; Informasi SPMB Tahun Ajaran 2026/2027 — Kunjungi Menu SPMB untuk Info Selengkapnya &nbsp;✦&nbsp; Raih Prestasi Terbaik Bersama SMPN 1 Karanganyar &nbsp;✦&nbsp; Hubungi Kami: (0271) 495059 | smpn1karanganyar@gmail.com &nbsp;✦&nbsp; Selamat Datang di Website Resmi SMP Negeri 1 Karanganyar &nbsp;✦&nbsp; &quot;The Nicest Place for The Bright Future&quot;
-          </marquee>
+          {React.createElement('marquee', {scrollamount:'6', direction:'left', behavior:'scroll'},
+            'Selamat Datang di Website Resmi SMP Negeri 1 Karanganyar  ✦  "The Nicest Place for The Bright Future"  ✦  Informasi SPMB Tahun Ajaran 2026/2027 — Kunjungi Menu SPMB untuk Info Selengkapnya  ✦  Raih Prestasi Terbaik Bersama SMPN 1 Karanganyar  ✦  Hubungi Kami: (0271) 495059 | smpn1karanganyar@gmail.com'
+          )}
         </div>
         <Navbar />
         {/*
