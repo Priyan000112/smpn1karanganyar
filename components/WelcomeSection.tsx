@@ -8,25 +8,21 @@ export default function WelcomeSection() {
 
           {/* Kepala Sekolah */}
           <div className="flex flex-col xs:flex-row gap-5 items-start">
-            {/* Foto kepsek */}
-            <div className="flex-shrink-0 mx-auto xs:mx-0">
-              <div className="relative">
-                {/* Bingkai luar */}
-                <div className="w-36 xs:w-40 md:w-44 h-48 xs:h-52 md:h-56 rounded-lg overflow-hidden shadow-xl border-4 border-white dark:border-slate-700 ring-4 ring-primary-600 dark:ring-primary-500">
-                  <Image
-                    src="/images/kepsek.jpg"
-                    alt="Kepala Sekolah SMPN 1 Karanganyar"
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 480px) 144px, 176px"
-                    priority
-                  />
-                </div>
-                {/* Badge nama di bawah foto */}
-                <div className="mt-0 bg-primary-700 text-white text-center py-2 px-2 rounded-b-lg -mt-1 shadow-md">
-                  <p className="font-bold text-white text-xs font-poppins leading-tight">Kurniah, S.Pd</p>
-                  <p className="text-primary-200 text-2xs font-roboto">Kepala Sekolah</p>
-                </div>
+            {/* Foto kepsek — style seperti referensi: bulat, shadow, nama di bawah */}
+            <div className="flex-shrink-0 mx-auto xs:mx-0 text-center">
+              <div className="relative w-36 h-36 xs:w-40 xs:h-40 md:w-44 md:h-44 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-white dark:border-slate-700 ring-4 ring-primary-600">
+                <Image
+                  src="/images/kepsek.jpg"
+                  alt="Kepala Sekolah SMPN 1 Karanganyar"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 480px) 144px, 176px"
+                  priority
+                />
+              </div>
+              <div className="mt-3">
+                <p className="font-bold text-slate-800 dark:text-white text-sm font-poppins">Kurniah, S.Pd</p>
+                <p className="text-xs text-primary-600 dark:text-primary-400 font-medium mt-0.5 font-roboto">Kepala Sekolah</p>
               </div>
             </div>
 
