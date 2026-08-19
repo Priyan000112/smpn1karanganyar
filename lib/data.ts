@@ -163,30 +163,30 @@ export const strukturOrganisasi = [
 ]
 
 export const ekskulList = [
-  { nama: 'Pramuka', deskripsi: 'Mengembangkan karakter kepemimpinan dan cinta alam', icon: '⛺', pembina: 'Martono, S.Pd' },
-  { nama: 'Paskibra', deskripsi: 'Pasukan Pengibar Bendera - Juara 1 LKBB Tingkat Kabupaten', icon: '🚩', pembina: 'Heru Santoso, S.Pd' },
-  { nama: 'PMR', deskripsi: 'Palang Merah Remaja - keterampilan P3K dan kemanusiaan', icon: '🏥', pembina: 'Sri Wahyuni, S.Pd' },
-  { nama: 'Basket', deskripsi: 'Olahraga basket kompetitif tingkat kabupaten', icon: '🏀', pembina: 'Agus Prasetyo, S.Pd' },
-  { nama: 'Voli', deskripsi: 'Olahraga voli putra dan putri', icon: '🏐', pembina: 'Budi Hartono, S.Pd' },
-  { nama: 'Futsal', deskripsi: 'Olahraga futsal antar sekolah', icon: '⚽', pembina: 'Andi Kurniawan, S.Pd' },
-  { nama: 'Seni Tari', deskripsi: 'Tari tradisional dan modern', icon: '💃', pembina: 'Lestari Indah, S.Pd' },
-  { nama: 'Paduan Suara', deskripsi: 'Paduan suara dan seni musik', icon: '🎵', pembina: 'Yuni Kristiana, S.Pd' },
-  { nama: 'KIR', deskripsi: 'Karya Ilmiah Remaja - penelitian dan inovasi', icon: '🔬', pembina: 'Dewi Rahmawati, S.Pd' },
-  { nama: 'English Club', deskripsi: 'Pengembangan kemampuan bahasa Inggris', icon: '📖', pembina: 'Eka Fitriani, S.Pd' },
-  { nama: 'Robotik', deskripsi: 'Teknologi dan pemrograman robot', icon: '💻', pembina: 'Andi Kurniawan, S.Pd' },
-  { nama: 'Karate', deskripsi: 'Bela diri karate dan kedisiplinan', icon: '🥋', pembina: 'Joko Susilo, S.Pd' },
+  { nama: 'Pramuka', deskripsi: 'Mengembangkan karakter kepemimpinan dan cinta alam', icon: 'Tent', pembina: 'Martono, S.Pd' },
+  { nama: 'Paskibra', deskripsi: 'Pasukan Pengibar Bendera - Juara 1 LKBB Tingkat Kabupaten', icon: 'Flag', pembina: 'Heru Santoso, S.Pd' },
+  { nama: 'PMR', deskripsi: 'Palang Merah Remaja - keterampilan P3K dan kemanusiaan', icon: 'HeartPulse', pembina: 'Sri Wahyuni, S.Pd' },
+  { nama: 'Basket', deskripsi: 'Olahraga basket kompetitif tingkat kabupaten', icon: 'CircleDot', pembina: 'Agus Prasetyo, S.Pd' },
+  { nama: 'Voli', deskripsi: 'Olahraga voli putra dan putri', icon: 'Circle', pembina: 'Budi Hartono, S.Pd' },
+  { nama: 'Futsal', deskripsi: 'Olahraga futsal antar sekolah', icon: 'Dribbble', pembina: 'Andi Kurniawan, S.Pd' },
+  { nama: 'Seni Tari', deskripsi: 'Tari tradisional dan modern', icon: 'Music2', pembina: 'Lestari Indah, S.Pd' },
+  { nama: 'Paduan Suara', deskripsi: 'Paduan suara dan seni musik', icon: 'Music', pembina: 'Yuni Kristiana, S.Pd' },
+  { nama: 'KIR', deskripsi: 'Karya Ilmiah Remaja - penelitian dan inovasi', icon: 'FlaskConical', pembina: 'Dewi Rahmawati, S.Pd' },
+  { nama: 'English Club', deskripsi: 'Pengembangan kemampuan bahasa Inggris', icon: 'Languages', pembina: 'Eka Fitriani, S.Pd' },
+  { nama: 'Robotik', deskripsi: 'Teknologi dan pemrograman robot', icon: 'Cpu', pembina: 'Andi Kurniawan, S.Pd' },
+  { nama: 'Karate', deskripsi: 'Bela diri karate dan kedisiplinan', icon: 'Shield', pembina: 'Joko Susilo, S.Pd' },
 ]
 
 export const fasilitasList = [
-  { nama: 'Ruang Kelas', jumlah: '30 Ruang', deskripsi: 'Dilengkapi proyektor dan AC', icon: '🏫' },
-  { nama: 'Laboratorium IPA', jumlah: '2 Lab', deskripsi: 'Peralatan sains lengkap dan modern', icon: '🔬' },
-  { nama: 'Laboratorium Komputer', jumlah: '2 Lab', deskripsi: '60 unit komputer terkoneksi internet', icon: '💻' },
-  { nama: 'Perpustakaan', jumlah: '1 Ruang', deskripsi: '5.000+ koleksi buku dan e-library', icon: '📚' },
-  { nama: 'Lapangan Olahraga', jumlah: '2 Lapangan', deskripsi: 'Basket, voli, dan serbaguna', icon: '🏃' },
-  { nama: 'Aula', jumlah: '1 Aula', deskripsi: 'Kapasitas 500 orang', icon: '🎭' },
-  { nama: 'Kantin Sehat', jumlah: '1 Kantin', deskripsi: 'Menu bergizi dan higienis', icon: '🍱' },
-  { nama: 'Mushola', jumlah: '1 Mushola', deskripsi: 'Fasilitas ibadah siswa', icon: '🕌' },
-  { nama: 'UKS', jumlah: '1 Ruang', deskripsi: 'Kesehatan dan P3K', icon: '🏥' },
+  { nama: 'Ruang Kelas', jumlah: '30 Ruang', deskripsi: 'Dilengkapi proyektor dan AC', icon: 'School' },
+  { nama: 'Laboratorium IPA', jumlah: '2 Lab', deskripsi: 'Peralatan sains lengkap dan modern', icon: 'FlaskConical' },
+  { nama: 'Laboratorium Komputer', jumlah: '2 Lab', deskripsi: '60 unit komputer terkoneksi internet', icon: 'Monitor' },
+  { nama: 'Perpustakaan', jumlah: '1 Ruang', deskripsi: '5.000+ koleksi buku dan e-library', icon: 'BookOpen' },
+  { nama: 'Lapangan Olahraga', jumlah: '2 Lapangan', deskripsi: 'Basket, voli, dan serbaguna', icon: 'Dumbbell' },
+  { nama: 'Aula', jumlah: '1 Aula', deskripsi: 'Kapasitas 500 orang', icon: 'Building2' },
+  { nama: 'Kantin Sehat', jumlah: '1 Kantin', deskripsi: 'Menu bergizi dan higienis', icon: 'UtensilsCrossed' },
+  { nama: 'Mushola', jumlah: '1 Mushola', deskripsi: 'Fasilitas ibadah siswa', icon: 'Star' },
+  { nama: 'UKS', jumlah: '1 Ruang', deskripsi: 'Kesehatan dan P3K', icon: 'HeartPulse' },
 ]
 
 export const blogPosts = [

@@ -52,8 +52,8 @@ export default function Navbar() {
       'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
       scrolled ? 'shadow-lg' : ''
     )}>
-      {/* Top bar — running text */}
-      <div className="bg-primary-700 text-white py-1.5 overflow-hidden hidden sm:block" style={{fontSize:'13px',whiteSpace:'nowrap',fontFamily:'sans-serif'}}>
+      {/* Top bar — running text, tampil di semua ukuran layar */}
+      <div style={{backgroundColor:'#1a3a6b',color:'#FFD700',padding:'5px 0',fontSize:'13px',overflow:'hidden',whiteSpace:'nowrap',fontWeight:'500'}}>
         {React.createElement('marquee', {scrollamount:'4', direction:'left', behavior:'scroll'},
           'Selamat Datang di Website SMP Negeri 1 Karanganyar - The Nicest Place for The Bright Future'
         )}
