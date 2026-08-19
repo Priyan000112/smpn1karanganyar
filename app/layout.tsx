@@ -33,6 +33,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
           rel="stylesheet"
         />
+        {/* Keyframes untuk running text — harus di head agar pasti dieksekusi */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          @keyframes marquee-run {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+        `}} />
         {/* Cegah FOUC dark mode */}
         <script
           dangerouslySetInnerHTML={{
