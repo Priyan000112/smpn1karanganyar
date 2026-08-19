@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import RunningText from '@/components/RunningText'
 import { schoolInfo } from '@/lib/data'
 
 export const metadata: Metadata = {
@@ -40,14 +41,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="bg-slate-50 dark:bg-slate-950 min-h-screen">
+        <RunningText />
         <Navbar />
         {/*
           pt kalkulasi:
-          - top bar: 28px (sm ke atas) atau 0 (mobile)
+          - running text: 32px
+          - top bar navbar: 28px (sm ke atas)
           - navbar: 64px (mobile) / 70px (md ke atas)
-          - total mobile: 64px, sm+: 98px (28+70)
+          - total mobile: 96px (32+64), sm+: 130px (32+28+70)
         */}
-        <main className="pt-16 sm:pt-[98px]">
+        <main className="pt-24 sm:pt-[130px]">
           {children}
         </main>
         <Footer />
