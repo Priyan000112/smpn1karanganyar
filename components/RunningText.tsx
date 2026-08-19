@@ -12,11 +12,36 @@ export default function RunningText() {
   const content = texts.join('   ✦   ')
 
   return (
-    <div className="bg-primary-800 dark:bg-primary-950 text-white overflow-hidden py-1.5 border-b border-white/10">
-      <div className="running-text-track text-xs font-roboto opacity-90">
-        <span>{content}&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;</span>
-        <span aria-hidden>{content}&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;</span>
+    <>
+      <style>{`
+        @keyframes marquee-run {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .marquee-inner {
+          display: flex;
+          width: max-content;
+          white-space: nowrap;
+          animation: marquee-run 40s linear infinite;
+        }
+        .marquee-inner:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+      <div
+        style={{
+          backgroundColor: '#1e3a8a',
+          color: 'white',
+          overflow: 'hidden',
+          padding: '6px 0',
+          borderBottom: '1px solid rgba(255,255,255,0.1)',
+        }}
+      >
+        <div className="marquee-inner text-xs">
+          <span style={{ paddingRight: '40px' }}>{content}</span>
+          <span style={{ paddingRight: '40px' }} aria-hidden="true">{content}</span>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
