@@ -53,15 +53,15 @@ export default function WelcomeSection() {
                 <span className="inline-block bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 text-2xs sm:text-xs font-semibold px-2 sm:px-3 py-1 rounded-full mb-2 sm:mb-3 uppercase tracking-wide" style={{fontFamily:'Open Sans, sans-serif'}}>
                   Sambutan Kepala Sekolah
                 </span>
-                <h2 className="text-base sm:text-xl md:text-2xl font-bold text-slate-800 dark:text-white mb-2 sm:mb-4" style={{fontFamily:'Open Sans, sans-serif'}}>
+                <h2 className="text-base sm:text-xl md:text-2xl font-bold text-slate-800 dark:text-white mb-2 sm:mb-3" style={{fontFamily:'Open Sans, sans-serif'}}>
                   Selamat Datang
                 </h2>
-                <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed" style={{fontFamily:'Merriweather, serif'}}>
-                  <p className="font-medium text-slate-700 dark:text-slate-300 hidden sm:block">
+                <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 space-y-1.5 sm:space-y-2 leading-relaxed" style={{fontFamily:'Merriweather, serif'}}>
+                  <p className="font-medium text-slate-700 dark:text-slate-300">
                     Assalaamu'alaikum Warahmatullahi Wabarakatuh.
                   </p>
                   <p>
-                    Puji syukur kami panjatkan ke hadirat Tuhan Yang Maha Esa atas limpahan rahmat-Nya sehingga website resmi SMP Negeri 1 Karanganyar dapat hadir sebagai sarana informasi.
+                    Puji syukur kami panjatkan ke hadirat Tuhan Yang Maha Esa atas limpahan rahmat-Nya sehingga website resmi SMP Negeri 1 Karanganyar dapat hadir sebagai sarana informasi dan publikasi kemajuan sekolah.
                   </p>
                   <p className="hidden sm:block">
                     SMP Negeri 1 Karanganyar berkomitmen menghasilkan lulusan berakhlak mulia, berprestasi, dan siap menghadapi tantangan global.
@@ -69,7 +69,7 @@ export default function WelcomeSection() {
                   <p className="hidden md:block">
                     Kami mengundang seluruh warga sekolah, orang tua, dan masyarakat untuk bersama-sama mewujudkan pendidikan yang berkualitas.
                   </p>
-                  <p className="font-medium text-slate-700 dark:text-slate-300 hidden sm:block">
+                  <p className="font-medium text-slate-700 dark:text-slate-300">
                     Wassalamu'alaikum Warahmatullahi Wabarakatuh
                   </p>
                 </div>
