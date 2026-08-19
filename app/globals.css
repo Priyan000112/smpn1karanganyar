@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -20,7 +20,7 @@
   body {
     color: rgb(var(--foreground-rgb));
     background: rgb(var(--background-rgb));
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Merriweather', serif;
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
@@ -28,8 +28,8 @@
     font-weight: 700;
     line-height: 1.2;
   }
-  p, span, li, a {
-    font-family: 'Roboto', sans-serif;
+  p, span, li, a, td, th {
+    font-family: 'Merriweather', serif;
   }
 }
 

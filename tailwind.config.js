@@ -28,10 +28,11 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans:    ['Poppins', 'sans-serif'],
-        body:    ['Roboto', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'],
-        roboto:  ['Roboto', 'sans-serif'],
+        sans:          ['Poppins', 'sans-serif'],
+        body:          ['Merriweather', 'serif'],
+        poppins:       ['Poppins', 'sans-serif'],
+        merriweather:  ['Merriweather', 'serif'],
+        roboto:        ['Merriweather', 'serif'], // alias agar class lama tetap jalan
       },
       fontSize: {
         '2xs': '0.625rem',
