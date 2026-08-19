@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { Target, ClipboardList, Award, Leaf } from 'lucide-react'
 
 export default function WelcomeSection() {
   return (
@@ -62,9 +61,7 @@ export default function WelcomeSection() {
             {/* Visi */}
             <div className="bg-primary-600 rounded-2xl p-5 md:p-6 text-white shadow-md">
               <div className="flex items-center gap-2.5 mb-3">
-                <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Target size={16} className="text-white" strokeWidth={2} />
-                </div>
+                <span className="text-2xl">🎯</span>
                 <h3 className="font-bold text-lg font-poppins">Visi</h3>
               </div>
               <p className="text-primary-100 text-sm leading-relaxed font-roboto">
@@ -75,9 +72,7 @@ export default function WelcomeSection() {
             {/* Misi ringkas */}
             <div className="card p-5 md:p-6">
               <div className="flex items-center gap-2.5 mb-4">
-                <div className="w-8 h-8 bg-primary-100 dark:bg-primary-900/40 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <ClipboardList size={16} className="text-primary-600 dark:text-primary-400" strokeWidth={2} />
-                </div>
+                <span className="text-2xl">📋</span>
                 <h3 className="font-bold text-slate-800 dark:text-white font-poppins">Misi (Ringkasan)</h3>
               </div>
               <ul className="space-y-2.5">
@@ -105,22 +100,22 @@ export default function WelcomeSection() {
             {/* Badges */}
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-800/50 rounded-xl p-4 flex items-center gap-3">
-                <div className="w-9 h-9 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Award size={18} className="text-amber-600 dark:text-amber-400" strokeWidth={1.75} />
-                </div>
-                <div>
-                  <p className="font-bold text-amber-700 dark:text-amber-400 text-sm font-poppins">Akreditasi A</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 font-roboto">BAN-S/M</p>
-                </div>
+                <div className="flex items-center gap-3 flex-shrink-0">
+                <span className="text-2xl">🏆</span>
+              </div>
+              <div>
+                <p className="font-bold text-amber-700 dark:text-amber-400 text-sm font-poppins">Akreditasi A</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-roboto">BAN-S/M</p>
+              </div>
               </div>
               <div className="bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-200 dark:border-emerald-800/50 rounded-xl p-4 flex items-center gap-3">
-                <div className="w-9 h-9 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Leaf size={18} className="text-emerald-600 dark:text-emerald-400" strokeWidth={1.75} />
-                </div>
-                <div>
-                  <p className="font-bold text-emerald-700 dark:text-emerald-400 text-sm font-poppins">Adiwiyata</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 font-roboto">Tingkat Provinsi</p>
-                </div>
+                <div className="flex items-center gap-3 flex-shrink-0">
+                <span className="text-2xl">🌿</span>
+              </div>
+              <div>
+                <p className="font-bold text-emerald-700 dark:text-emerald-400 text-sm font-poppins">Adiwiyata</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-roboto">Tingkat Provinsi</p>
+              </div>
               </div>
             </div>
           </div>

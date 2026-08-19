@@ -53,9 +53,9 @@ export default function Navbar() {
       scrolled ? 'shadow-lg' : ''
     )}>
       {/* Top bar — running text */}
-      <div className="bg-primary-900 dark:bg-slate-950 text-white py-1.5 overflow-hidden hidden sm:block" style={{fontSize:'12px',whiteSpace:'nowrap'}}>
-        {React.createElement('marquee', {scrollamount:'5', direction:'left', behavior:'scroll'},
-          'Selamat Datang di Website Resmi SMP Negeri 1 Karanganyar  ✦  "The Nicest Place for The Bright Future"  ✦  Informasi SPMB Tahun Ajaran 2026/2027 — Kunjungi Menu SPMB  ✦  Raih Prestasi Terbaik Bersama SMPN 1 Karanganyar  ✦  Hubungi Kami: (0271) 495059 | smpn1karanganyar@gmail.com  ✦  Selamat Datang di Website Resmi SMP Negeri 1 Karanganyar  ✦  "The Nicest Place for The Bright Future"'
+      <div className="bg-primary-700 text-white py-1.5 overflow-hidden hidden sm:block" style={{fontSize:'13px',whiteSpace:'nowrap',fontFamily:'sans-serif'}}>
+        {React.createElement('marquee', {scrollamount:'4', direction:'left', behavior:'scroll'},
+          'Selamat Datang di Website SMP Negeri 1 Karanganyar - The Nicest Place for The Bright Future'
         )}
       </div>
 
