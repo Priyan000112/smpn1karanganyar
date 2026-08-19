@@ -22,7 +22,7 @@ export default function WelcomeSection() {
               </div>
               <div className="text-center mt-3 px-1">
                 <p className="font-bold text-slate-800 dark:text-white text-sm font-poppins">
-                  Drs. Bambang Sutrisno, M.Pd
+                  Kurniah, S.Pd
                 </p>
                 <p className="text-xs text-primary-600 dark:text-primary-400 font-medium mt-0.5 font-roboto">
                   Kepala Sekolah

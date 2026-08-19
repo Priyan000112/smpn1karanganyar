@@ -131,7 +131,7 @@ export const heroSlides = [
 ]
 
 export const guruList = [
-  { name: 'Drs. Bambang Sutrisno, M.Pd', jabatan: 'Kepala Sekolah', mapel: '', foto: '' },
+  { name: 'Kurniah, S.Pd', jabatan: 'Kepala Sekolah', mapel: '', foto: '' },
   { name: 'Septiana Cahyasari, S.Pd', jabatan: 'Guru', mapel: 'IPA', foto: '' },
   { name: 'Henry Suryani, S.Pd', jabatan: 'Guru', mapel: 'IPS', foto: '' },
   { name: 'Dian Sari Noviati, S.Kom', jabatan: 'Guru', mapel: 'TIK', foto: '' },
@@ -151,7 +151,7 @@ export const stafList = [
 ]
 
 export const strukturOrganisasi = [
-  { jabatan: 'Kepala Sekolah', nama: 'Drs. Bambang Sutrisno, M.Pd', level: 1 },
+  { jabatan: 'Kepala Sekolah', nama: 'Kurniah, S.Pd', level: 1 },
   { jabatan: 'Wakasek Kurikulum', nama: 'Sri Wahyuni, S.Pd', level: 2 },
   { jabatan: 'Wakasek Kesiswaan', nama: 'Heru Santoso, S.Pd', level: 2 },
   { jabatan: 'Wakasek Sarpras', nama: 'Agus Prasetyo, S.Pd', level: 2 },
