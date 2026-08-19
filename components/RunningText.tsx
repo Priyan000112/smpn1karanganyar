@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const texts = [
   'Selamat Datang di Website Resmi SMP Negeri 1 Karanganyar',
   '"The Nicest Place for The Bright Future"',
@@ -5,6 +6,8 @@ const texts = [
   'Raih Prestasi Terbaik Bersama SMPN 1 Karanganyar',
   'Hubungi Kami: (0271) 495059 | smpn1karanganyar@gmail.com',
 ]
+
+const Marquee = 'marquee' as any
 
 export default function RunningText() {
   const content = texts.join('   ✦   ')
@@ -20,11 +23,9 @@ export default function RunningText() {
         overflow: 'hidden',
       }}
     >
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error marquee is valid HTML */}
-      <marquee scrollamount="5" behavior="scroll" direction="left">
+      <Marquee scrollamount={5} behavior="scroll" direction="left">
         {content}&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;{content}
-      </marquee>
+      </Marquee>
     </div>
   )
 }
