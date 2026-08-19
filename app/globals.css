@@ -73,18 +73,18 @@
 }
 
 /* Running text / marquee */
+@keyframes marquee-run {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 .running-text-track {
   display: flex;
   width: max-content;
   white-space: nowrap;
-  animation: running-text 40s linear infinite;
+  animation: marquee-run 40s linear infinite;
 }
 .running-text-track:hover {
   animation-play-state: paused;
-}
-@keyframes running-text {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
 }
 
 /* Animations */
