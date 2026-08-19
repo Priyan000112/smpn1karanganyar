@@ -3,26 +3,42 @@ import Link from 'next/link'
 
 export default function FasilitasSection() {
   return (
-    <section className="py-16 bg-primary-700 dark:bg-primary-900">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-white mb-2">Fasilitas Unggulan</h2>
-          <p className="text-primary-200">Sarana dan prasarana lengkap untuk mendukung proses belajar mengajar</p>
+    <section className="py-12 md:py-16 bg-primary-700 dark:bg-primary-900 relative overflow-hidden">
+      {/* Dekorasi */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-white transform translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 left-0 w-56 h-56 rounded-full bg-white transform -translate-x-1/2 translate-y-1/2" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 md:mb-10">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 font-poppins">
+            Fasilitas Unggulan
+          </h2>
+          <p className="text-primary-200 text-sm md:text-base font-roboto">
+            Sarana dan prasarana lengkap untuk mendukung proses belajar mengajar
+          </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
           {fasilitasList.map((f) => (
-            <div key={f.nama} className="bg-white/10 hover:bg-white/20 backdrop-blur rounded-2xl p-5 transition-colors">
-              <div className="text-3xl mb-3">{f.icon}</div>
-              <h3 className="font-semibold text-white text-sm mb-1">{f.nama}</h3>
-              <p className="text-primary-300 text-xs font-bold mb-1">{f.jumlah}</p>
-              <p className="text-primary-200 text-xs">{f.deskripsi}</p>
+            <div
+              key={f.nama}
+              className="bg-white/10 hover:bg-white/20 active:bg-white/25 backdrop-blur rounded-xl md:rounded-2xl p-4 md:p-5 transition-colors border border-white/10 hover:border-white/20"
+            >
+              <div className="text-2xl md:text-3xl mb-2 md:mb-3">{f.icon}</div>
+              <h3 className="font-semibold text-white text-xs md:text-sm mb-0.5 font-poppins">{f.nama}</h3>
+              <p className="text-gold-400 text-2xs md:text-xs font-bold mb-1 font-roboto">{f.jumlah}</p>
+              <p className="text-primary-200 text-2xs md:text-xs font-roboto hidden sm:block">{f.deskripsi}</p>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-8">
-          <Link href="/infrastruktur/fasilitas" className="inline-block bg-white text-primary-700 font-semibold px-6 py-3 rounded-lg hover:bg-primary-50 transition-colors">
+        <div className="text-center mt-8 md:mt-10">
+          <Link
+            href="/infrastruktur"
+            className="inline-flex items-center gap-2 bg-white text-primary-700 font-semibold px-5 md:px-6 py-2.5 md:py-3 rounded-lg hover:bg-primary-50 active:bg-primary-100 transition-colors text-sm md:text-base font-poppins shadow-md"
+          >
             Lihat Detail Fasilitas →
           </Link>
         </div>

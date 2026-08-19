@@ -16,18 +16,28 @@ module.exports = {
           300: '#93c5fd',
           400: '#60a5fa',
           500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
+          600: '#1a56db',
+          700: '#1e40af',
+          800: '#1e3a8a',
+          900: '#172554',
         },
-        secondary: {
+        gold: {
+          400: '#fbbf24',
           500: '#f59e0b',
           600: '#d97706',
         }
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans:    ['Poppins', 'sans-serif'],
+        body:    ['Roboto', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+        roboto:  ['Roboto', 'sans-serif'],
+      },
+      fontSize: {
+        '2xs': '0.625rem',
+      },
+      screens: {
+        xs: '375px',
       },
     },
   },

@@ -13,21 +13,22 @@ function Counter({ target, suffix = '' }: { target: number; suffix?: string }) {
       ([entry]) => {
         if (entry.isIntersecting && !started.current) {
           started.current = true
-          let start = 0
           const duration = 2000
-          const step = Math.ceil(target / (duration / 16))
+          const steps = 60
+          const increment = target / steps
+          let current = 0
           const timer = setInterval(() => {
-            start += step
-            if (start >= target) {
+            current += increment
+            if (current >= target) {
               setCount(target)
               clearInterval(timer)
             } else {
-              setCount(start)
+              setCount(Math.floor(current))
             }
-          }, 16)
+          }, duration / steps)
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     )
     if (ref.current) observer.observe(ref.current)
     return () => observer.disconnect()
@@ -35,33 +36,38 @@ function Counter({ target, suffix = '' }: { target: number; suffix?: string }) {
 
   return (
     <span ref={ref}>
-      {count.toLocaleString('id-ID')}
-      {suffix}
+      {count.toLocaleString('id-ID')}{suffix}
     </span>
   )
 }
 
 export default function StatsSection() {
   const stats = [
-    { label: 'Alumni', value: schoolInfo.stats.alumni, suffix: '+', icon: '🎓', color: 'bg-blue-500' },
-    { label: 'Guru & Tendik', value: schoolInfo.stats.guru, suffix: '', icon: '👨‍🏫', color: 'bg-emerald-500' },
-    { label: 'Murid Aktif', value: schoolInfo.stats.murid, suffix: '+', icon: '🧑‍🎒', color: 'bg-violet-500' },
-    { label: 'Ekstrakurikuler', value: schoolInfo.stats.ekskul, suffix: '', icon: '🏆', color: 'bg-amber-500' },
+    { label: 'Alumni', value: schoolInfo.stats.alumni, suffix: '+', icon: '🎓', bg: 'bg-blue-500/20', iconBg: 'bg-blue-500' },
+    { label: 'Guru & Tendik', value: schoolInfo.stats.guru, suffix: '', icon: '👨‍🏫', bg: 'bg-emerald-500/20', iconBg: 'bg-emerald-500' },
+    { label: 'Murid Aktif', value: schoolInfo.stats.murid, suffix: '+', icon: '🧑‍🎒', bg: 'bg-violet-500/20', iconBg: 'bg-violet-500' },
+    { label: 'Ekstrakurikuler', value: schoolInfo.stats.ekskul, suffix: '', icon: '🏆', bg: 'bg-gold-500/20', iconBg: 'bg-gold-500' },
   ]
 
   return (
-    <section className="py-16 bg-primary-700 dark:bg-primary-900">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="py-10 md:py-14 bg-primary-700 dark:bg-primary-900 relative overflow-hidden">
+      {/* Dekorasi background */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute -top-10 -left-10 w-60 h-60 rounded-full bg-white" />
+        <div className="absolute -bottom-10 -right-10 w-80 h-80 rounded-full bg-white" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {stats.map((stat) => (
-            <div key={stat.label} className="text-center text-white">
-              <div className={`w-14 h-14 ${stat.color} rounded-2xl flex items-center justify-center text-2xl mx-auto mb-3`}>
+            <div key={stat.label} className="text-center">
+              <div className={`w-12 h-12 md:w-14 md:h-14 ${stat.iconBg} rounded-xl md:rounded-2xl flex items-center justify-center text-xl md:text-2xl mx-auto mb-3 shadow-lg`}>
                 {stat.icon}
               </div>
-              <p className="text-4xl font-bold mb-1">
+              <p className="text-3xl md:text-4xl font-bold text-white mb-1 font-poppins">
                 <Counter target={stat.value} suffix={stat.suffix} />
               </p>
-              <p className="text-primary-200 text-sm font-medium">{stat.label}</p>
+              <p className="text-primary-200 text-xs md:text-sm font-medium font-roboto">{stat.label}</p>
             </div>
           ))}
         </div>

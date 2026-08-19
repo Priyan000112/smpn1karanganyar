@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { Menu, X, ChevronDown, Sun, Moon, Search } from 'lucide-react'
 import { navItems, schoolInfo } from '@/lib/data'
@@ -13,6 +13,8 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
+  const searchRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     const stored = localStorage.getItem('theme')
@@ -20,9 +22,20 @@ export default function Navbar() {
       setDarkMode(true)
       document.documentElement.classList.add('dark')
     }
-    const onScroll = () => setScrolled(window.scrollY > 20)
+    const onScroll = () => setScrolled(window.scrollY > 10)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    if (searchOpen) searchRef.current?.focus()
+  }, [searchOpen])
+
+  // Tutup menu mobile saat resize ke desktop
+  useEffect(() => {
+    const onResize = () => { if (window.innerWidth >= 1024) setMenuOpen(false) }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
   }, [])
 
   const toggleDark = () => {
@@ -33,149 +46,212 @@ export default function Navbar() {
   }
 
   return (
-    <header
-      className={clsx(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        scrolled
-          ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur shadow-md'
-          : 'bg-white dark:bg-slate-900'
-      )}
-    >
-      {/* Top bar */}
-      <div className="bg-primary-700 dark:bg-primary-900 text-white text-xs py-1.5 px-4 hidden md:block">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <span>📍 {schoolInfo.address}</span>
-          <span>☎️ {schoolInfo.phone} | ✉️ {schoolInfo.email}</span>
+    <header className={clsx(
+      'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+      scrolled ? 'shadow-lg' : ''
+    )}>
+      {/* Top bar — mirip referensi: biru gelap, teks kecil */}
+      <div className="bg-primary-900 dark:bg-slate-950 text-white py-1.5 px-4 hidden sm:block">
+        <div className="max-w-7xl mx-auto flex justify-between items-center text-xs font-roboto">
+          <div className="flex items-center gap-4">
+            <span className="flex items-center gap-1.5 opacity-90">
+              <span>📍</span>
+              <span className="hidden md:inline">{schoolInfo.address}</span>
+              <span className="md:hidden">Karanganyar, Jawa Tengah</span>
+            </span>
+          </div>
+          <div className="flex items-center gap-4 opacity-90">
+            <span>☎️ {schoolInfo.phone}</span>
+            <span className="hidden lg:inline">✉️ {schoolInfo.email}</span>
+          </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-            <div className="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-              S1K
-            </div>
-            <div className="hidden sm:block">
-              <p className="font-bold text-slate-800 dark:text-white text-sm leading-tight">
-                {schoolInfo.shortName}
-              </p>
-              <p className="text-xs text-slate-500 dark:text-slate-400">Karanganyar, Jawa Tengah</p>
-            </div>
-          </Link>
+      {/* Main navbar — putih dengan shadow */}
+      <div className={clsx(
+        'bg-white dark:bg-slate-900 transition-all duration-300',
+        scrolled ? 'shadow-md' : 'border-b border-slate-100 dark:border-slate-800'
+      )}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex items-center justify-between h-16 md:h-[70px]">
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1">
-            {navItems.map((item) => (
-              <div
-                key={item.href}
-                className="relative"
-                onMouseEnter={() => item.children && setActiveDropdown(item.label)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <Link
-                  href={item.href}
-                  className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors"
-                >
-                  {item.label}
-                  {item.children && <ChevronDown size={14} className="opacity-60" />}
-                </Link>
-                {item.children && activeDropdown === item.label && (
-                  <div className="absolute top-full left-0 mt-1 w-52 bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-slate-100 dark:border-slate-700 overflow-hidden py-1 z-50">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        className="block px-4 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-3 flex-shrink-0 min-w-0">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-primary-700 rounded-xl flex items-center justify-center text-white font-bold text-xs md:text-sm flex-shrink-0 shadow-md">
+                SMPN<br />1 KRA
               </div>
-            ))}
-          </nav>
+              <div className="min-w-0">
+                <p className="font-bold text-slate-800 dark:text-white text-sm md:text-base leading-tight truncate font-poppins">
+                  {schoolInfo.shortName}
+                </p>
+                <p className="text-2xs md:text-xs text-primary-600 dark:text-primary-400 font-medium font-roboto">
+                  Karanganyar, Jawa Tengah
+                </p>
+              </div>
+            </Link>
 
-          {/* Right actions */}
-          <div className="flex items-center gap-2">
-            {/* Search */}
-            {searchOpen ? (
-              <div className="flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-1.5">
-                <input
-                  autoFocus
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Cari..."
-                  className="bg-transparent text-sm outline-none w-40 text-slate-700 dark:text-slate-200"
-                />
-                <button onClick={() => { setSearchOpen(false); setSearchQuery('') }}>
-                  <X size={16} className="text-slate-500" />
+            {/* Desktop Nav */}
+            <nav className="hidden lg:flex items-center gap-0.5">
+              {navItems.map((item) => (
+                <div
+                  key={item.href}
+                  className="relative"
+                  onMouseEnter={() => item.children && setActiveDropdown(item.label)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  <Link
+                    href={item.href}
+                    className={clsx(
+                      'flex items-center gap-1 px-3 py-2 text-sm font-semibold rounded-lg transition-all duration-150 font-poppins whitespace-nowrap',
+                      activeDropdown === item.label
+                        ? 'text-primary-600 bg-primary-50 dark:text-primary-400 dark:bg-primary-900/30'
+                        : 'text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20'
+                    )}
+                  >
+                    {item.label}
+                    {item.children && (
+                      <ChevronDown
+                        size={13}
+                        className={clsx('transition-transform duration-200', activeDropdown === item.label ? 'rotate-180' : '')}
+                      />
+                    )}
+                  </Link>
+
+                  {/* Dropdown */}
+                  {item.children && activeDropdown === item.label && (
+                    <div className="absolute top-full left-0 mt-0.5 w-52 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden py-1.5 z-50">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          className="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-600 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-roboto"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary-400 flex-shrink-0" />
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </nav>
+
+            {/* Right actions */}
+            <div className="flex items-center gap-1 flex-shrink-0">
+              {/* Search */}
+              {searchOpen ? (
+                <div className="flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-2 border border-slate-200 dark:border-slate-700">
+                  <Search size={14} className="text-slate-400 flex-shrink-0" />
+                  <input
+                    ref={searchRef}
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Cari..."
+                    className="bg-transparent text-sm outline-none w-28 sm:w-40 text-slate-700 dark:text-slate-200 font-roboto"
+                    onKeyDown={(e) => e.key === 'Escape' && setSearchOpen(false)}
+                  />
+                  <button
+                    onClick={() => { setSearchOpen(false); setSearchQuery('') }}
+                    className="text-slate-400 hover:text-slate-600 flex-shrink-0"
+                    aria-label="Tutup pencarian"
+                  >
+                    <X size={14} />
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={() => setSearchOpen(true)}
+                  className="p-2.5 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                  aria-label="Cari"
+                >
+                  <Search size={18} />
                 </button>
-              </div>
-            ) : (
+              )}
+
+              {/* Dark mode */}
               <button
-                onClick={() => setSearchOpen(true)}
-                className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-                aria-label="Cari"
+                onClick={toggleDark}
+                className="p-2.5 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                aria-label="Toggle dark mode"
               >
-                <Search size={18} />
+                {darkMode ? <Sun size={18} /> : <Moon size={18} />}
               </button>
-            )}
 
-            {/* Dark mode */}
-            <button
-              onClick={toggleDark}
-              className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-              aria-label="Toggle dark mode"
-            >
-              {darkMode ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
-
-            {/* Mobile menu */}
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-              aria-label="Menu"
-            >
-              {menuOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
+              {/* Mobile hamburger */}
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="lg:hidden p-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                aria-label="Buka menu"
+                aria-expanded={menuOpen}
+              >
+                {menuOpen ? <X size={22} /> : <Menu size={22} />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile drawer */}
       {menuOpen && (
-        <div className="lg:hidden bg-white dark:bg-slate-900 border-t dark:border-slate-800 max-h-[80vh] overflow-y-auto">
-          <div className="px-4 py-3 space-y-1">
-            {navItems.map((item) => (
-              <div key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="block px-3 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/30"
-                >
-                  {item.label}
-                </Link>
-                {item.children && (
-                  <div className="ml-4 space-y-1">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        onClick={() => setMenuOpen(false)}
-                        className="block px-3 py-2 text-sm text-slate-600 dark:text-slate-400 hover:text-primary-600 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/30"
+        <>
+          {/* Backdrop */}
+          <div
+            className="lg:hidden fixed inset-0 bg-black/20 dark:bg-black/40 z-40 top-[calc(100%-1px)]"
+            onClick={() => setMenuOpen(false)}
+          />
+          <div className="lg:hidden bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 max-h-[75vh] overflow-y-auto z-50 relative shadow-xl">
+            <div className="px-4 py-3 divide-y divide-slate-100 dark:divide-slate-800">
+              {navItems.map((item) => (
+                <div key={item.href}>
+                  {item.children ? (
+                    <>
+                      <button
+                        onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}
+                        className="w-full flex items-center justify-between px-2 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 font-poppins"
                       >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+                        {item.label}
+                        <ChevronDown
+                          size={16}
+                          className={clsx('transition-transform duration-200 text-slate-400', mobileExpanded === item.label ? 'rotate-180' : '')}
+                        />
+                      </button>
+                      {mobileExpanded === item.label && (
+                        <div className="pb-2 pl-3 space-y-1">
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              onClick={() => setMenuOpen(false)}
+                              className="flex items-center gap-2 px-3 py-2.5 text-sm text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 font-roboto"
+                            >
+                              <span className="w-1.5 h-1.5 rounded-full bg-primary-300 flex-shrink-0" />
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="flex items-center px-2 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 font-poppins"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile contact info */}
+            <div className="px-6 py-3 bg-slate-50 dark:bg-slate-800/50 text-xs text-slate-500 dark:text-slate-400 font-roboto border-t border-slate-100 dark:border-slate-800">
+              <p>☎️ {schoolInfo.phone}</p>
+              <p className="mt-1">✉️ {schoolInfo.email}</p>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   )
